@@ -9,6 +9,10 @@ const Count = () => {
     var styles = {
         textAlign:"center",
         boxShadow: "0 0 10px black",
+        width: "500px",
+        margin:"auto",
+        padding:"20px"
+
         
     }
     return(
