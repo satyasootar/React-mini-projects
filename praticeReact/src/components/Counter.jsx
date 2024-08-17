@@ -1,7 +1,7 @@
 import { useState } from "react"
 const Count = () => {
     const [count , setCount] = useState(0)
-
+    
     const increase = () =>{
         setCount(count + 1)
     }
@@ -12,8 +12,6 @@ const Count = () => {
         width: "500px",
         margin:"auto",
         padding:"20px"
-
-        
     }
     return(
         <div className="container" style={styles}>
