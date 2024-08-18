@@ -53,7 +53,9 @@ export const TodoList = () => {
                 todoitem={todoItems}   
                 deleteitem={deleteItem}   
                 toggleItem={toggleItem}   
-            />  
+            /> 
+
+            <hr />  
         </div>  
     );  
 };

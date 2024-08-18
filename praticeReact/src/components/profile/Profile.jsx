@@ -1,5 +1,5 @@
 import './profile.css';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 export const Profile = () => {
     const [state, setState] = useState({
@@ -11,7 +11,7 @@ export const Profile = () => {
     });
 
     const [style, setStyle] = useState({
-        width: "500px",
+        width: "600px",
         height: "250px",
         margin: "50px auto",
         padding: "10px",
@@ -23,6 +23,15 @@ export const Profile = () => {
 
     const [isDarkMode, setIsDarkMode] = useState(false);
 
+    useEffect(()=>{                          //it calls the function inside the callback function after the EReact component is mounted 
+        getNewUser(); 
+        console.log("called")                    
+    },[])
+
+    const getNewUserHandler = () =>{
+        getNewUser();
+    }
+
     const getNewUser = async () => {
         let res = await fetch("https://randomuser.me/api/?results=1");
         let data = await res.json();
@@ -32,7 +41,7 @@ export const Profile = () => {
             name: data.results[0].name.title + " " + data.results[0].name.first + " " + data.results[0].name.last,
             email: data.results[0].email,
             gender: data.results[0].gender,
-            country: data.results[0].location.country
+            country: data.results[0].location.country 
         });
     };
 
@@ -72,7 +81,7 @@ export const Profile = () => {
                     <dt><b>Country</b></dt>
                     <dd>{state.country}</dd>
                 </dl>
-                <button onClick={getNewUser}>Change user</button>
+                <button onClick={getNewUserHandler}>Change user</button>
                 <br />
                 <div className="toggle-switch">
                     <input className="toggle-input" id="toggle" type="checkbox" onChange={toggleMode} />
