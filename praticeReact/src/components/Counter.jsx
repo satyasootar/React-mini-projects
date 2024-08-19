@@ -14,7 +14,7 @@ const Count = () => {
         padding:"20px"
     }
     return(
-        <div className="container" style={styles}>
+        <div className="card" >
             <h1>Click to increase the count</h1>
             <h2>{count}</h2>
             <button onClick={increase} >Click</button>

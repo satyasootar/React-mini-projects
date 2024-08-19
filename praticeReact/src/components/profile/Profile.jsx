@@ -14,7 +14,7 @@ export const Profile = () => {
         width: "600px",
         height: "250px",
         margin: "50px auto",
-        padding: "10px",
+        padding: "20px",
         display: "flex",
         backgroundColor: "white",
         color: "black",
@@ -24,8 +24,7 @@ export const Profile = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(()=>{                          //it calls the function inside the callback function after the EReact component is mounted 
-        getNewUser(); 
-        console.log("called")                    
+        getNewUser();                     
     },[])
 
     const getNewUserHandler = () =>{
@@ -35,7 +34,6 @@ export const Profile = () => {
     const getNewUser = async () => {
         let res = await fetch("https://randomuser.me/api/?results=1");
         let data = await res.json();
-        console.log(data);
         setState({
             image: data.results[0].picture.large,
             name: data.results[0].name.title + " " + data.results[0].name.first + " " + data.results[0].name.last,
@@ -63,11 +61,13 @@ export const Profile = () => {
     };
 
     return (
+        <>
         <div className='card' style={style}>
             <div className='imageContainer'>
                 <img src={state.image} alt="User" />
             </div>
             <div className='detailsContainer'>
+            <h2>Random Users</h2>
                 <dl className='details'>
                     <dt><b>User Name</b></dt>
                     <dd>{state.name}</dd>
@@ -88,6 +88,8 @@ export const Profile = () => {
                     <label className="toggle-label" htmlFor="toggle"></label>
                 </div>
             </div>
+            
         </div>
+        </>
     );
 };

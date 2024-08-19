@@ -39,8 +39,8 @@ export const TodoList = () => {
     };  
 
     return (  
-        <div className="container">  
-            <hr />  
+        <div className="card">  
+        
             <h1>Todo List</h1>  
             <input   
                 value={task}   
@@ -55,7 +55,7 @@ export const TodoList = () => {
                 toggleItem={toggleItem}   
             /> 
 
-            <hr />  
+
         </div>  
     );  
 };

@@ -3,10 +3,11 @@ import { useRef, useState } from 'react'
 export const Timer = () =>{
     const [timer, setTimer] = useState(0)
     
-    let intervalId = useRef;
+    let intervalId = useRef(null);  //useRef returns a object which contains a value called current. If we assign a value as a parameter in useRef. It will by default store in the current. It's value will not change even a the componets get re-renders.
     
     const startTimer = () =>{
-         intervalId = setInterval(()=>{
+         intervalId.current = setInterval(()=>{
+            // console.log("current: ", intervalId.current);
             
             setTimer((prevTimer)=>prevTimer + 1)
             
@@ -14,7 +15,7 @@ export const Timer = () =>{
     }
 
     const stopTimer = () =>{
-        clearInterval(intervalId)
+        clearInterval(intervalId.current)  //It will stop the set interval.
     }
 
     return(
