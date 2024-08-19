@@ -20,12 +20,15 @@ export default function Form() {
         })
     }
 
-
+    const getData =(event) =>{
+        event.preventDefault();
+        console.log(data);
+    }
     return (
         <div className="card">
-            <form>
+            <form onSubmit={getData} >
                 <h2>User Form</h2>
-                <div>
+                <div>  
                     <input type="text" placeholder="Enter name" onChange={handleName} name="name"/>
                 </div>
                 <br />
@@ -34,11 +37,11 @@ export default function Form() {
                 </div>
                 <br />
                 <div>
-                    <input type="email" placeholder="Enter Email" name="city" />
+                    <input type="email" placeholder="Enter Email" onChange={handleName}  name="email" />
                 </div>
                 <br />
 
-                <select name="city" >
+                <select name="city" onChange={handleName}  >
                     <option>Select City</option>
                     <option>Bhadrak</option>
                     <option>Dhenkanal</option>
