@@ -7,12 +7,12 @@ import Form from "./components/Form/Form"
 
 function App() {
   return (
-    <div style={{textAlign: "center", padding:"20px"}}>
-      {/* <Count />
+    <div style={{display:"flex", flexDirection:"column", gap:"50px", textAlign:"center"}}>
+      <Count />
       <TodoList />
       <Profile />
       <Timer />
-      <DOM /> */}
+      <DOM />
       <Form />
     </div>
   )

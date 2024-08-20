@@ -5,7 +5,7 @@ export const Todoitem = ({ todoitem, deleteitem, toggleItem }) => {
         display: "flex",  
         alignItems: "center",  
         justifyContent: "center",  
-        gap: "20px",  
+        // gap: "20px",  
         marginBottom: "10px", // Add some spacing between items  
     };  
 
