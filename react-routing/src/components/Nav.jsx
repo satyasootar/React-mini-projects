@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import './Nav.css'
 
 export default function Nav() {
@@ -8,11 +10,11 @@ export default function Nav() {
             <h1>React Routing</h1>
         </div>
         <div>
-            <a href='/'>Home</a>
-            <a href="/user">Users</a>
-            <a href='/products'>Products</a>
-            <a href='/help '>Help</a>
+            <Link to='/#'>Home</Link>
+            <Link to="/user">Users</Link>
+            <Link to='/products'>Products</Link>
+            <Link to='/help '>Help</Link>
         </div>
     </div>
-  )
+  ) 
 }
