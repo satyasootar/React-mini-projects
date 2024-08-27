@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeContext } from './Context/ThemeContext'
 import { useContext } from 'react'
 import { AuthContext } from './Context/AuthContext'
-export default function Nav(props) {
+export default function Nav() {
 
     const { theme } = useContext(ThemeContext)
     const { isLoggedIn , logIn , logOut } = useContext(AuthContext)

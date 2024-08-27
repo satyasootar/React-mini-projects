@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 export default function User() {
   let [users, setUsers] = useState([]);
 
@@ -9,13 +11,14 @@ export default function User() {
   }, []);
 
   const getUser = async () => {
-    let res = await fetch("https://randomuser.me/api/?results=20");
+
+    let res = await fetch(`https://${import.meta.env.VITE_RANDOMUSER}/api/?results=20`);
     let data = await res.json();
     console.log("data: ", data);
 
     setUsers(data.results);
   };
-
+ 
   return (
     <div>
       {users.length > 0 ? (
@@ -43,7 +46,7 @@ export default function User() {
                     <Link style={{color:"blue"}} to="/userdetails">Details</Link>
                   </td>
                 </tr>
-              ))}
+              ))} 
             </tbody>
           </table>
         </div>

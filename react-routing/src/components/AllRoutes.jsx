@@ -5,6 +5,8 @@ import Product from './Product';
 import Help from './Help';
 import PageNotFound from './PageNotFound';
 import USerDetails from './USerDetails';
+import ProductDetails from './ProductDetails';
+import PrivateComp from './PrivateComp';
 
 export default function AllRoutes() {
   const routes = [
@@ -14,24 +16,28 @@ export default function AllRoutes() {
     },
     {
       path: "/user",
-      element: <User />
+      element:<PrivateComp><User /></PrivateComp>
     },
     {
       path: "/products",
-      element: <Product />
+      element: <PrivateComp> <Product /></PrivateComp>
     },
     {
       path: "/help",
       element: <Help />
-    },
+    }, 
     {
-      path: "/*",
+      path: "*",
       element: <PageNotFound />
     },
     {
       path: "/userDetails",
       element: <USerDetails  />
-    }
+    },
+    {
+      path: "/productdetails/:id",
+      element: <ProductDetails/>
+    },
   ];
 
   return (
