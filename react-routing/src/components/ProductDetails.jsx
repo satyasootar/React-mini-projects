@@ -10,7 +10,7 @@ export default function ProductDetails() {
   }, [id]);
 
   let getProductDetails = async () => {
-    let res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    let res = await fetch(`https://${import.meta.env.VITE_PRODUCTS}/products/${id}`);
     let data = await res.json();
     console.log("data: ", data);
     setProduct(data);
