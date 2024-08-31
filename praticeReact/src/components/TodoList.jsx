@@ -39,7 +39,7 @@ export const TodoList = () => {
     };  
 
     return (  
-        <div className="card">  
+        <div className="card" >  
         
             <h1>Todo List</h1>  
             <input   
@@ -47,7 +47,7 @@ export const TodoList = () => {
                 type="text"   
                 placeholder="Enter the task"   
                 onChange={handleInputChange}   
-            />  
+            /> 
             <button onClick={addTodoItem}>Add</button>  
             <Todoitem   
                 todoitem={todoItems}   
